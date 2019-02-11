@@ -4,7 +4,7 @@ services:
         build: .docker/apache
         container_name: sf4_apache
         ports:
-          - 80:80
+          - 81:81
         volumes:
           - .docker/config/vhosts:/etc/apache2/sites-enabled
           - .:/home/wwwroot/sf4
@@ -41,7 +41,7 @@ services:
           PMA_HOST: mysql
           PMA_PORT: 3306
         ports:
-            - 8080:80
+            - 8079:80
         links:
             - mysql
 
@@ -49,4 +49,4 @@ services:
         image: djfarrelly/maildev
         container_name: sf4_maildev
         ports:
-          - 8001:80
+          - 8003:80
